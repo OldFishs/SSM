@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-<!--    组件信息 ioc配置 》 applicationContext读取 》 实例化对象-->
-    <bean id="happyComponent" class="com.xxx.ioc_03.HappyComponent"/>
-</beans>
