@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--引用和被引用的组件必须全在ioc容器内-->
+
+
+<!--    一 单个构造参数注入-->
+    <bean id="userDao" class="com.xxx.ioc_02.UserDao"/>
+
+    <bean id="userService" class="com.xxx.ioc_02.UserService">
+<!--        构造参数传值di的配置
+                value直接属性值
+                ref 应用其他的bean
+-->
+        <constructor-arg ref="userDao"/>
+    </bean>
+
+
+<!--    二 多个构造参数注入-->
+    <bean id="userService1" class="com.xxx.ioc_02.UserService">
+<!--        1 构造参数的顺序填写-->
+        <constructor-arg value="19"/>
+        <constructor-arg value="xiaoming"/>
+        <constructor-arg ref="userDao"/>
+    </bean>
+
+    <bean id="userService2" class="com.xxx.ioc_02.UserService">
+<!--        2 构造参数的名字填写-->
+        <constructor-arg name="name" value="rick"/>
+        <constructor-arg name="age" value="19"/>
+        <constructor-arg name="userDao" ref="userDao"/>
+    </bean>
+
+    <bean id="userService3" class="com.xxx.ioc_02.UserService">
+<!--        3 构造参数的下角标填写-->
+        <constructor-arg index="1" value="rick"/>
+        <constructor-arg index="0" value="19"/>
+        <constructor-arg index="2" ref="userDao"/>
+    </bean>
+
+
+<!--    三 触发setter方法注入-->
+    <bean id="movieFinder" class="com.xxx.ioc_02.MovieFinder"/>
+
+    <bean id="simpleMovieLister"  class="com.xxx.ioc_02.SimpleMovieLister">
+<!--    name 属性名 去掉set 首字母小写调用set方法的名
+
+-->
+        <property name="movieName" value="xiaoshideta"/>
+        <property name="movieFinder" value="movieFinder"/>
+
+    </bean>
+</beans>
