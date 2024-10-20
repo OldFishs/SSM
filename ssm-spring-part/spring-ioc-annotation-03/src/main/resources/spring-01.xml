@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--     1 普通配置包扫描
+            指定包等于指定包里所有类
+-->
+<!--    <context:component-scan base-package="com.xxx.ico_01"/>-->
+
+<!--
+        2 指定包，排除注解
+-->
+<!--    <context:component-scan base-package="com.xxx">-->
+<!--        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>-->
+<!--    </context:component-scan>-->
+
+<!--
+        3 指定包 指定包含注解        use-default-filters指定包不生效
+-->
+    <context:component-scan base-package="com.xxx" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+    </context:component-scan>
+</beans>

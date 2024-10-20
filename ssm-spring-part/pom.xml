@@ -9,44 +9,39 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-ioc-xml-01</module>
-        <module>spring-ioc-xml-practice-02</module>
+        <module>spring-ioc-java-05</module>
+        <module>spring-java-practice-06</module>
+        <module>spring-test-annotation-07</module>
+        <module>spring-aop-annotation-08</module>
+        <module>spring-aop-annotation-08</module>
     </modules>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
     <dependencies>
         <dependency>
-            <groupId>com.adobe.aem</groupId>
-            <artifactId>uber-jar</artifactId>
-            <version>6.5.21</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.xxx</groupId>
-            <artifactId>ssm-spring-part</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-<!--        spring context依赖-->
+
+        <!--spring context依赖-->
+        <!--当你引入SpringContext依赖之后，表示将Spring的基础依赖引入了-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>6.1.12</version>
+            <version>6.0.6</version>
         </dependency>
-<!--        junit5测试-->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.8.1</version>
-            <scope>test</scope>
-        </dependency>
+
+        <!-- 数据库驱动和连接池-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.28</version>
+            <version>8.0.25</version>
         </dependency>
 
         <dependency>
@@ -62,7 +57,44 @@
             <version>6.0.6</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>6.0.6</version>
+        </dependency>
 
+        <!-- 数据库驱动和连接池-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.25</version>
+        </dependency>
 
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.8</version>
+        </dependency>
+
+        <!-- spring-jdbc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>6.0.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>6.0.6</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+
+
+        <!--spring context依赖-->
+        <!--当你引入SpringContext依赖之后，表示将Spring的基础依赖引入了-->
+
+
+
 </project>
